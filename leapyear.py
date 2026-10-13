@@ -1,13 +1,16 @@
-def leap_year(year):
-    if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
-        return True
+import sys
+
+def checkLeapYear(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0) 
+        
+if __name__ == "__main__":
+    y = int(sys.argv[1]) 
+    
+    if checkLeapYear(y):
+        print(f"{y} is a leap year.")
     else:
-        return False
+        print(f"{y} is not a leap year.")    
+    
+    print("File name is ", sys.argv[0])
 
-
-year = int(input("Enter a year: "))
-
-result = leap_year(year)
-
-print("Year:", year)
-print("Leap Year:", result)
+   
